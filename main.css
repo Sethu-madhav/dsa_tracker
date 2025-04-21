@@ -1,0 +1,149 @@
+/* Custom styles */
+body {
+    font-family: 'Inter', sans-serif; /* Use Inter font */
+    background-color: #f3f4f6; /* bg-gray-100 */
+}
+.task-item.completed .task-details {
+    text-decoration: line-through;
+    color: #9ca3af; /* gray-400 */
+}
+/* Style the custom checkbox */
+.custom-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 1.25rem; /* h-5 */
+    width: 1.25rem; /* w-5 */
+    border: 2px solid #d1d5db; /* border-gray-300 */
+    border-radius: 0.25rem; /* rounded */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-right: 0.75rem; /* mr-3 */
+    vertical-align: middle;
+    flex-shrink: 0; /* Prevent checkbox from shrinking */
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.custom-checkbox:checked {
+    background-color: #3b82f6; /* bg-blue-500 */
+    border-color: #3b82f6; /* border-blue-500 */
+}
+/* Style the checkmark inside the checkbox */
+.custom-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+/* Progress bar container */
+.progress-container {
+    background-color: #e5e7eb; /* bg-gray-200 */
+    border-radius: 9999px; /* rounded-full */
+    overflow: hidden;
+    height: 1rem; /* h-4 */
+    width: 100%;
+}
+/* Progress bar fill */
+.progress-bar {
+    background-color: #3b82f6; /* bg-blue-500 */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: medium;
+    font-size: 0.75rem; /* text-xs */
+    border-radius: 9999px; /* rounded-full */
+    transition: width 0.3s ease-in-out;
+}
+/* Styling for collapsible sections */
+.week-header {
+    cursor: pointer;
+    background-color: #f9fafb; /* bg-gray-50 */
+    transition: background-color 0.2s ease;
+}
+.week-header:hover {
+    background-color: #f3f4f6; /* bg-gray-100 */
+}
+.week-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+.week-content.open {
+    max-height: 1000px; /* Adjust as needed, large enough for content */
+    transition: max-height 0.5s ease-in;
+}
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+.week-header.open .toggle-icon {
+    transform: rotate(90deg);
+}
+
+/* Style buttons like the image */
+.control-button {
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 0.375rem; /* rounded-md */
+    font-weight: 500; /* font-medium */
+    transition: background-color 0.2s ease;
+    border: 1px solid #d1d5db; /* border border-gray-300 */
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-sm */
+}
+.control-button.primary {
+    background-color: #3b82f6; /* bg-blue-500 */
+    color: white;
+    border-color: transparent;
+}
+.control-button.primary:hover {
+    background-color: #2563eb; /* hover:bg-blue-600 */
+}
+.control-button.secondary {
+    background-color: white; /* bg-white */
+    color: #374151; /* text-gray-700 */
+}
+.control-button.secondary:hover {
+    background-color: #f9fafb; /* hover:bg-gray-50 */
+}
+
+/* Dark mode overrides */
+body.dark {
+    background-color: #1f2937; /* bg-gray-800 */
+    color: #f9fafb;            /* text-gray-100 */
+}
+body.dark .bg-gray-100            { background-color: #1f2937 !important; }
+body.dark .bg-white               { background-color: #111827 !important; }
+body.dark .bg-gray-50             { background-color: #374151 !important; }
+body.dark .text-gray-800          { color: #f9fafb !important; }
+body.dark .text-gray-700          { color: #d1d5db !important; }
+body.dark .text-gray-600          { color: #9ca3af !important; }
+body.dark .text-gray-500          { color: #9ca3af !important; }
+body.dark .border-gray-200        { border-color: #4b5563 !important; }
+body.dark .border-gray-300        { border-color: #4b5563 !important; }
+body.dark .shadow-md              { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 70%), 0 2px 4px -2px rgb(0 0 0 / 70%) !important; }
+
+body.dark .control-button.secondary {
+    background-color: #374151 !important;
+    color: #d1d5db !important;
+    border-color: #4b5563 !important;
+}
+body.dark .control-button.secondary:hover {
+    background-color: #4b5563 !important;
+}
+body.dark .control-button.primary {
+    /* keep blue button same */
+    background-color: #3b82f6 !important;
+    color: #fff !important;
+}
+
+body.dark .custom-checkbox           { border-color: #4b5563 !important; }
+body.dark .custom-checkbox:checked   { background-color: #2563eb !important; border-color: #2563eb !important; }
+body.dark .progress-container        { background-color: #4b5563 !important; }
+body.dark .progress-bar              { background-color: #3b82f6 !important; }
+
+body.dark .week-header               { background-color: #374151 !important; }
+body.dark .week-header:hover         { background-color: #4b5563 !important; }
